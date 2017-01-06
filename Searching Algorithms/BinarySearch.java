@@ -3,9 +3,8 @@
 */
 public class BinarySearch {
 	
-
 	/**
-       main(): Instantiates an array of Strings to be searched.
+       main(): Instantiates an array of integers to be searched.
 	*/
 	public static void main(String[] args){
         
@@ -15,13 +14,13 @@ public class BinarySearch {
 	}
     
     /**
-       linearSearch(String[] array, String key): Performs a linear search for the given key in the array.
+       linearSearch(int[] array, int key): Performs a binary search for the given key in the array.
     */
 	public static int binarySearch(int[] array, int key){
          
          boolean found = false;
          int index = -1;
-         int upper = array.length;
+         int upper = array.length-1;
          int lower = 0;
          int mid;
 
@@ -47,7 +46,6 @@ public class BinarySearch {
                 index = mid;
                 System.out.println(key + " was found at index " + mid);
             }
-
 
          }
 
