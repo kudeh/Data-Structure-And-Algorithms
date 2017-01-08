@@ -220,6 +220,26 @@ public class SinglyLinkedList{
       
       System.out.print("null\n");
     }
+
+    /**
+      reverse(): reverses the linked list
+    */
+    public void reverse(){
+
+    	Node prev = null;
+    	Node curr = head;                  //null<-1<-2<-3
+    	Node next = curr.getNext();
+
+    	while(next != null){
+    		curr = next;
+    		next = next.getNext();
+            curr.setNext(prev);
+            prev = curr;           
+    	}
+
+    	head.setNext(prev);
+    }
+
     
     /**
       main(): 
@@ -235,7 +255,9 @@ public class SinglyLinkedList{
        
        
        sl.display();
-       sl.insert(11, 10);
+       sl.reverse();
+       sl.display();
+       /*sl.insert(11, 10);
        sl.display();
        sl.insert(34, 7);
        sl.display();
@@ -245,7 +267,7 @@ public class SinglyLinkedList{
        sl.display();
 
        sl.find(7);
-       sl.find(21);
+       sl.find(21);*/
        
 
 	}
